@@ -145,10 +145,18 @@ yesBtn.onclick = () => {
 };
 
 // Funny Button
+// Funny Button - Unlimited Move 😈
+
 noBtn.onmouseover = () => {
+
     noBtn.style.position = "absolute";
-    noBtn.style.left = Math.random() * 70 + "%";
-    noBtn.style.top = Math.random() * 70 + "%";
+
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
 };
 /* ==========================
    OPERATION MANAO MAHI ❤️
