@@ -2,7 +2,6 @@
    OPERATION MANAO MAHI ❤️
    Part 1
 ========================== */
-alert("JS Started");
 const loader = document.getElementById("loader");
 const main = document.getElementById("main");
 
