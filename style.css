@@ -31,10 +31,10 @@ body{
     pointer-events:none;
     z-index:0;
 }
-
 .hidden{
-    display:none;
+    display:block;
 }
+
 
 /* Loader */
 
