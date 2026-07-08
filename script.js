@@ -142,7 +142,11 @@ origin:{y:0.6}
 
 // Smile Button
 yesBtn.onclick = () => {
-    alert("😊 Thank you Mahi ❤️");
+    yesBtn.innerText = "❤️ Thank You Mahi ❤️";
+    confetti({
+        particleCount: 200,
+        spread: 100
+    });
 };
 
 // Funny Button
