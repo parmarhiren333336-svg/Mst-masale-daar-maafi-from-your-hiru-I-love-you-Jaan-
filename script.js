@@ -47,6 +47,10 @@ window.onload = ()=>{
 let width = 0;  
   
 const bar = document.querySelector(".loading");  
+   if(!bar){
+    alert("Loading bar not found");
+    return;
+   }
   console.log(bar);   
 const timer = setInterval(()=>{  
   
