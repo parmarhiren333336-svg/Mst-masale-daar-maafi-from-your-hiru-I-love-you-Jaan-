@@ -130,11 +130,14 @@ smileBtn.onclick = () => {
     roseSection.style.display = "none";
     finalSection.classList.remove("hidden");
 
-    confetti({
-        particleCount: 180,
-        spread: 100,
-        origin: { y: 0.6 }
-    });
+    if(typeof confetti==="function"){
+confetti({
+particleCount:180,
+spread:100,
+origin:{y:0.6}
+});
+    }
+    
 };
 
 // Smile Button
