@@ -144,7 +144,6 @@ yesBtn.onclick = () => {
     yesBtn.innerHTML = "❤️ Thank you mahi ❤️";
 };
 
-// Funny Button
 // Funny Button - Unlimited Move 😈
 
 noBtn.onmouseover = () => {
