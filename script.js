@@ -47,7 +47,7 @@ window.onload = ()=>{
 let width = 0;
 
 const bar = document.querySelector(".loading");
-
+  console.log(bar); 
 const timer = setInterval(()=>{
 
 width++;
