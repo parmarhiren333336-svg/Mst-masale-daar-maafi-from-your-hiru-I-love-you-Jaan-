@@ -141,7 +141,7 @@ origin:{y:0.6}
 
 // Smile Button
 yesBtn.onclick = () => {
-    yesBtn.innerHTML = "❤️ i love you babuuu ❤️";
+    yesBtn.innerHTML = "❤️ Thank you mahi ❤️";
 };
 
 // Funny Button
