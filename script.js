@@ -1,74 +1,185 @@
-window.onload = function(){
+/* ==========================
+   OPERATION MANAO MAHI ❤️
+   Part 1
+========================== */
 
-    setTimeout(function(){
+const loader = document.getElementById("loader");
+const main = document.getElementById("main");
 
-        document.getElementById("loading").style.display="none";
+const typing = document.getElementById("typing");
 
-        document.getElementById("galaxy").style.display="flex";
+const startBtn = document.getElementById("startBtn");
 
-        startTyping();
+const journey = document.getElementById("journey");
 
-    },3000);
+const message =
+`Hey Mahi ❤️
+
+Aaj koi lambi speech nahi...
+
+Bas ek chhota sa surprise hai.
+
+Promise...
+Sirf 2 minute lagenge. 🌸`;
+
+let i = 0;
+
+// Typing Effect
+
+function typeWriter(){
+
+if(i < message.length){
+
+typing.innerHTML += message.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,40);
+
+}
+
+}
+
+// Loading Screen
+
+window.onload = ()=>{
+
+let width = 0;
+
+const bar = document.querySelector(".loading");
+
+const timer = setInterval(()=>{
+
+width++;
+
+bar.style.width = width + "%";
+
+if(width >=100){
+
+clearInterval(timer);
+
+loader.style.display="none";
+
+main.classList.remove("hidden");
+
+typeWriter();
+
+}
+
+},25);
 
 };
 
+// Start Journey
 
+startBtn.onclick = ()=>{
 
-function startTyping(){
+document.querySelector(".hero").style.display="none";
 
-    let text = "Mahi ❤️ You are the most special person in my life ✨";
+journey.classList.remove("hidden");
 
-    let i = 0;
+window.scrollTo({
 
-    let speed = 80;
+top:0,
 
+behavior:"smooth"
 
-    function type(){
+});
 
-        if(i < text.length){
+};
+/* ==========================
+   OPERATION MANAO MAHI ❤️
+   Part 2
+========================== */
 
-            document.getElementById("typing").innerHTML += text.charAt(i);
+const giftBtn = document.getElementById("giftBtn");
+const giftSection = document.getElementById("giftSection");
 
-            i++;
+const openGift = document.getElementById("openGift");
+const letterSection = document.getElementById("letterSection");
 
-            setTimeout(type,speed);
+const nextBtn = document.getElementById("nextBtn");
+const roseSection = document.getElementById("roseSection");
 
-        }
+const smileBtn = document.getElementById("smileBtn");
+const finalSection = document.getElementById("finalSection");
 
-    }
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
 
+// Journey → Gift
+giftBtn.onclick = () => {
+    journey.style.display = "none";
+    giftSection.classList.remove("hidden");
+};
 
-    type();
+// Gift → Letter
+openGift.onclick = () => {
+    giftSection.style.display = "none";
+    letterSection.classList.remove("hidden");
+};
 
-}
+// Letter → Rose
+nextBtn.onclick = () => {
+    letterSection.style.display = "none";
+    roseSection.classList.remove("hidden");
+};
 
+// Rose → Final
+smileBtn.onclick = () => {
+    roseSection.style.display = "none";
+    finalSection.classList.remove("hidden");
 
+    confetti({
+        particleCount: 180,
+        spread: 100,
+        origin: { y: 0.6 }
+    });
+};
 
+// Smile Button
+yesBtn.onclick = () => {
+    alert("😊 Thank you Mahi ❤️");
+};
 
-function startJourney(){
+// Funny Button
+noBtn.onmouseover = () => {
+    noBtn.style.position = "absolute";
+    noBtn.style.left = Math.random() * 70 + "%";
+    noBtn.style.top = Math.random() * 70 + "%";
+};
+/* ==========================
+   OPERATION MANAO MAHI ❤️
+   Part 3
+========================== */
 
-    document.getElementById("galaxy").style.display="none";
+// Floating Hearts
+setInterval(() => {
 
-    document.getElementById("giftBox").style.display="flex";
+    const heart = document.createElement("div");
 
-}
+    heart.innerHTML = "❤️";
 
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = "-30px";
+    heart.style.fontSize = (20 + Math.random() * 20) + "px";
+    heart.style.opacity = "0.9";
+    heart.style.pointerEvents = "none";
+    heart.style.transition = "transform 6s linear, top 6s linear";
 
+    document.body.appendChild(heart);
 
+    setTimeout(() => {
+        heart.style.top = window.innerHeight + "px";
+        heart.style.transform = "rotate(360deg)";
+    }, 100);
 
-function openGift(){
+    setTimeout(() => {
+        heart.remove();
+    }, 6200);
 
-    document.getElementById("giftBox").style.display="none";
+}, 800);
 
-    document.getElementById("letter").style.display="block";
-
-}
-
-
-
-
-function complete(){
-
-    alert("Our Journey Begins Forever ❤️");
-
-}
+// Final Message
+console.log("❤️ Website created by Hiru for Mahi ❤️");
