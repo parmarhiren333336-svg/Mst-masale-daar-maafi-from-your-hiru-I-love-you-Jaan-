@@ -42,7 +42,7 @@ setTimeout(typeWriter,40);
   
 // Loading Screen  
   
-window.onload = ()=>{  
+window.addEventListener("load", ()=>{
   
 let width = 0;  
   
